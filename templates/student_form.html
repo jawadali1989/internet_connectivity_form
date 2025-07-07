@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internet Connectivity Form</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 60px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0055a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='left_logo.png') }}" alt="Left Logo" style="height: 150px; width: 150px;">
+        <!-- HEADER SECTION -->
+	<div style="background-color: #003366; color: white; padding: 40px 40px;">
+  	<div style="display: flex; align-items: center; justify-content: space-between;">
+    	
+    
+    	<div style="text-align: center; flex-grow: 1;">
+      	<h1 style="margin: 0;">Pakistan Navy Engineering College</h1>
+    </div>
+    
+    
+  </div>
+
+  <div style="text-align: center; margin-top: 5px;">
+    <h3 style="margin: 0;">Internet Connectivity Form</h3>
+  </div>
+</div>
+
+        <img src="{{ url_for('static', filename='right_logo.png') }}" alt="Right Logo" style="height: 150px; width: 150px;">
+    </div>
+
+    <div class="container">
+        <form method="POST" action="/submit">
+            <label>Registration No:</label><input type="text" name="reg_no" required>
+            <label>NUST Email:</label><input type="email" name="nust_email" required>
+            <label>Full Name:</label><input type="text" name="full_name" required>
+            <label>Contact Number:</label><input type="text" name="contact_number" required>
+            <label>Program/Degree:</label><input type="text" name="program" required>
+            <label>Department:</label>
+            <select name="department" required>
+                <option value="DoEPE">DoEPE</option>
+                <option value="DoES">DoES</option>
+                <option value="DoNA">DoNA</option>
+                <option value="DoCySec">DoCySec</option>
+                <option value="DoIME">DoIME</option>
+                <option value="DoAS">DoAS</option>
+            </select>
+            <label>Device Name:</label><input type="text" name="device_name" required>
+            <label>MAC Address:</label><input type="text" name="mac_address" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
